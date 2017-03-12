@@ -3,12 +3,15 @@ from PIL import Image
 from math import sin,cos, sqrt, pi
 from datetime import datetime
 
+
 def size(image):
-    return min(img.size[0], img.size[1])
+    return min(image.size[0], image.size[1])
+
 
 def center(size):
     center = [size / 2, size / 2]
     return center
+
 
 def point(size, alpha):
     r = size / 2
@@ -16,6 +19,7 @@ def point(size, alpha):
     x = c[0] + r*sin(alpha)
     y = c[1] + r*cos(alpha)
     return [x,y]
+
 
 def line(p1, p2):
     if(abs(p2[0] - p1[0]) > 0.01):
@@ -26,6 +30,7 @@ def line(p1, p2):
         return [-a, 1, -b]
     else:
         return [1.0, 0.0, -p1[0]]
+
 
 def bresenhamPointsOnLine(p1, p2):
     points = []
@@ -83,8 +88,10 @@ def bresenhamPointsOnLine(p1, p2):
 
     return points
 
+
 def distance(line, point):
     return abs(line[0] * point[0] + line[1] * point[1] + line[2]) / sqrt(line[0] * line [0] + line[1] * line[1])
+
 
 def allPointsOnLine(line, size):
     allPoints = []
@@ -98,42 +105,43 @@ def allPointsOnLine(line, size):
                     allPoints.append([x, y])
     return allPoints
 
-img = Image.open('../img/img.bmp').convert('LA')
+
+img = Image.open('../img/phantom.bmp').convert('LA')
 pix = img.load()
 outPic = img.load()
 sizeOfImage = size(img)
 
 allLines = []
 
-count = 1000
-shiftCount = 1
+count = 100
+shiftCount = 10
+
+beta_step = 2 * pi * (5 / 360)
 
 for i in range(1, count + 1):
-    # print("getting line ", i, "/", count - 1)
+    if(i % 50 == 0):
+        print("getting line ", i, "/", count)
     alpha = 2 * pi * (i / count)
-    l1 = bresenhamPointsOnLine(point(sizeOfImage, alpha + pi), point(sizeOfImage, alpha))
+    for eachShift in range(shiftCount):
+        beta = beta_step * (-shiftCount / 2 + eachShift)
+        l1 = bresenhamPointsOnLine(point(sizeOfImage, alpha), point(sizeOfImage, alpha + beta + pi))
 
-    l2 = []
-    for i in range(len(l1)):
-        if(l1[i][0] < 0 or l1[i][0] >= sizeOfImage or l1[i][1] < 0 or l1[i][1] >= sizeOfImage):
-            pass
-        else:
-            l2.append(l1[i])
+        l2 = []
+        for i in range(len(l1)):
+            if(l1[i][0] < 0 or l1[i][0] >= sizeOfImage or l1[i][1] < 0 or l1[i][1] >= sizeOfImage):
+                pass
+            else:
+                l2.append(l1[i])
 
-    allLines.append(l2)
-    # for eachShift in range(shiftCount):
-    #     shift = -shiftCount / 2 + eachShift
-    #     l2 = [l1[0], l1[1], l1[2] + shift]
-    #     pointsOnLine = allPointsOnLine(l2, sizeOfImage)
-    #     allLines.append(pointsOnLine)
+        allLines.append(l2)
 
 sinogram = []
 
 for eachLine in allLines:
-    sum = 0
+    localSum = 0
     for p in eachLine:
-        sum = sum + pix[(p[0], p[1])][0]
-    avg = sum / len(eachLine)
+        localSum = localSum + pix[(p[0], p[1])][0]
+    avg = localSum / len(eachLine)
 
     sinogram.append((eachLine, avg))
 
@@ -141,8 +149,8 @@ for i in range(0, sizeOfImage):
     for j in range(0, sizeOfImage):
         pix[i, j] = (255, 255)
 
-max = 1
-min = 255
+localMax = 1
+localMin = 255
 
 outArray = [[(0, 0) for x in range(sizeOfImage)] for y in range(sizeOfImage)]
 
@@ -158,16 +166,16 @@ for i in range(0, sizeOfImage):
         if(outArray[i][j][1] > 1):
             value = outArray[i][j][0] / outArray[i][j][1]
             pix[i, j] = (int(value), 255)
-        if (value > max):
-            max = value
-        if (value < min):
-            min = value
+        if (value > localMax):
+            localMax = value
+        if (value < localMin):
+            localMin = value
 
 for i in range(0, sizeOfImage):
     for j in range(0, sizeOfImage):
-        value = (outArray[i][j][0] - min) / (max - min) * 255
-        # value = (outArray[i][j][0] / max) * 255
+        # value = (outArray[i][j][0] - localMin) / (localMax - localMin) * 255
+        value = (outArray[i][j][0] / localMax) * 255
         pix[i, j] = (int(value), 255)
 
 plt.imshow(img)
-plt.savefig("../out/count" + str(count) + str(datetime.now()) + ".jpg")
+plt.savefig("../out/" + str(datetime.now()) + ".jpg")
