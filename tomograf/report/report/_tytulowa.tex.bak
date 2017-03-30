@@ -1,0 +1,30 @@
+\thispagestyle{empty} %bez numeru strony
+
+\begin{center}
+{\large{Sprawozdanie z laboratorium:\\
+Informatyka w Medycynie}}
+
+\vspace{3ex}
+
+Tomograf
+
+\vspace{3ex}
+{\footnotesize\today}
+
+\end{center}
+
+
+\vspace{10ex}
+
+Prowadzący: Iwo Błądek
+
+\vspace{5ex}
+
+Autorzy:
+\begin{tabular}{lllr}
+\textbf{Adam Pioterek} & inf122446 & adam.pioterek@student.put.poznan.pl \\
+\textbf{Marcin Drzewiecki} & inf122472 & marcin.drzewiecki@student.put.poznan.pl \\
+\end{tabular}
+
+\newpage
+
