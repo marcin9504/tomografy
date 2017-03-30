@@ -24,7 +24,7 @@
 \end{description}
  
 \section{Wynik działania programu}
-
+Poniżej znajdują się sinogramy dla obrazów wejściowych uzyskane za pomocą transformacji Radona oraz obrazu odtworzone z sinogramu za pomocą odwrotnej transformacji Radona.
 \subsection{Przekształcenia}
 \begin{figure}[H]
 \begin{center}
@@ -59,16 +59,16 @@
 
 \section{Analiza parametrów}
 
-Zbadaliśmy zależność błędu (średniokwadratowego) mierzonego na podstawie różnicy wartości pikseli obrazu wejściowego (phantom) oraz uzyskanego na wyjściu od: rozwartości kątowej, kroku układu emiter-detektor, liczby detektorów przypadających na jeden emiter. Badaliśmy błąd zarówno dla zastosowanego filtru, jak i bez niego.
+Zbadaliśmy zależność błędu (średniokwadratowego) mierzonego na podstawie różnicy wartości pikseli obrazu wejściowego (phantom) oraz uzyskanego na wyjściu od: rozpiętości kątowej, kroku układu emiter-detektor, liczby detektorów przypadających na jeden emiter. Badaliśmy błąd zarówno dla zastosowanego filtru, jak i bez niego.
 
-\subsection{Rozwartość kątowa}
+\subsection{Rozpiętość kątowa}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.8\textwidth]{./width.png}
 \end{center}
 \end{figure}
 
-Wykres przedstawia zależność błędu od rozwartości kątowej mierzonej w stopniach przy stałych pozostałych parametrach. Im większa jest rozwartość, tym mniejszy błąd. Dla wersji bez filtrowania największą różnicę można zauważyć dla wartości z przedziału 0-10 stopni. Nic nie można powiedzieć dla wersji z filtrowaniem. Najprawdopodobniej zaobserwowane wartości są przekłamane. Przy stosunkowo dużej rozwartości kątowej nie ma znaczącej różnicy w wersji z filtrowaniem i bez. 
+Wykres przedstawia zależność błędu od rozpiętości kątowej mierzonej w stopniach przy stałych pozostałych parametrach. Im większa jest rozpiętość, tym mniejszy błąd. Dla wersji bez filtrowania największą różnicę można zauważyć dla wartości z przedziału 0-10 stopni. Nic nie można powiedzieć dla wersji z filtrowaniem. Najprawdopodobniej zaobserwowane wartości są przekłamane. Przy stosunkowo dużej rozpiętość kątowej nie ma znaczącej różnicy w wersji z filtrowaniem i bez. 
 
 \subsection{Krok układu emiter-detektor}
 \begin{figure}[H]

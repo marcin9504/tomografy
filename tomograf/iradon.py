@@ -141,7 +141,6 @@ def sinogram_to_img2(img, sinogram, lines, filename1, filename2, filter):
         images.append(reconstructed)
         mse[iterator] = mean_squared_error(img, reconstructed)
     iterator += 1
-
     imageio.mimsave(filename1, images)
     save_plot(iterator, mse, filename2)
     return reconstructed

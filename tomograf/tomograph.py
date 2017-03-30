@@ -1,4 +1,4 @@
-#!/usr/bin/python
+# !/usr/bin/python
 
 # sources:
 # http://eduinf.waw.pl/inf/utils/002_roz/2008_06.php
@@ -12,7 +12,10 @@ import iradon
 from matplotlib import pyplot as plt
 from skimage.color import rgb2gray
 from skimage import io
+from dicom.dataset import Dataset, FileDataset
 import numpy as np
+import datetime
+import time
 from sklearn.metrics import mean_squared_error
 import dicom
 
@@ -70,7 +73,7 @@ class MyImage:
         file_meta.MediaStorageSOPClassUID = '1.2.840.10008.5.1.4.1.1.2'  # CT Image Storage
         file_meta.MediaStorageSOPInstanceUID = "1.2.3"  # !! Need valid UID here for real work
         file_meta.ImplementationClassUID = "1.2.3.4"  # !!! Need valid UIDs here
-        
+
         # Create the FileDataset instance (initially no data elements, but file_meta supplied)
         ds = FileDataset('output.dcm', {}, file_meta=file_meta, preamble=b"\0" * 128)
 
@@ -107,7 +110,8 @@ def tomograf(img_):
 
 def do_tomography():
     img = np.zeros([200, 200])
-    img[24:174, 24:174] = rgb2gray(io.imread("in/banana.bmp"))
+    img[24:174, 24:174] = rgb2gray(io.imread("in/phantom.png"))
 
     final_image = tomograf(img)
-    calculate_error(final_image)
+    # calculate_error(final_image)
+    print("Done")
