@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.11.21)  30 MAR 2017 21:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.11.21)  30 MAR 2017 21:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -654,43 +654,42 @@ Overfull \hbox (63.72935pt too wide) in paragraph at lines 23--28
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-<./banana/sinogram.jpg, id=45, 642.4pt x 481.8pt>
+<./banana/sinogram.jpg, id=61, 642.4pt x 481.8pt>
 File: ./banana/sinogram.jpg Graphic file (type jpg)
  <use ./banana/sinogram.jpg>
 Package pdftex.def Info: ./banana/sinogram.jpg used on input line 31.
 (pdftex.def)             Requested size: 276.00105pt x 207.00821pt.
 
-<./banana/reconstructedPicture2.png, id=46, 462.528pt x 346.896pt>
-File: ./banana/reconstructedPicture2.png Graphic file (type png)
+<./banana/reconstructedImg2.png, id=62, 462.528pt x 346.896pt>
+File: ./banana/reconstructedImg2.png Graphic file (type png)
 
-<use ./banana/reconstructedPicture2.png>
-Package pdftex.def Info: ./banana/reconstructedPicture2.png used on input line 
-32.
+<use ./banana/reconstructedImg2.png>
+Package pdftex.def Info: ./banana/reconstructedImg2.png used on input line 32.
 (pdftex.def)             Requested size: 276.00105pt x 207.01175pt.
  [2]
-<./phantom/sinogram.jpg, id=53, 642.4pt x 481.8pt>
+<./phantom/sinogram.jpg, id=69, 642.4pt x 481.8pt>
 File: ./phantom/sinogram.jpg Graphic file (type jpg)
 
 <use ./phantom/sinogram.jpg>
 Package pdftex.def Info: ./phantom/sinogram.jpg used on input line 39.
 (pdftex.def)             Requested size: 276.00105pt x 207.00821pt.
 
-<./phantom/reconstructedImg2.png, id=54, 462.528pt x 346.896pt>
+<./phantom/reconstructedImg2.png, id=70, 462.528pt x 346.896pt>
 File: ./phantom/reconstructedImg2.png Graphic file (type png)
 
 <use ./phantom/reconstructedImg2.png>
 Package pdftex.def Info: ./phantom/reconstructedImg2.png used on input line 40.
 
 (pdftex.def)             Requested size: 276.00105pt x 207.01175pt.
- [3 <./banana/sinogram.jpg> <./banana/reconstructedPicture2.png>] <./something/
-sinogram.jpg, id=60, 642.4pt x 481.8pt>
+ [3 <./banana/sinogram.jpg> <./banana/reconstructedImg2.png>] <./something/sino
+gram.jpg, id=76, 642.4pt x 481.8pt>
 File: ./something/sinogram.jpg Graphic file (type jpg)
 
 <use ./something/sinogram.jpg>
 Package pdftex.def Info: ./something/sinogram.jpg used on input line 47.
 (pdftex.def)             Requested size: 276.00105pt x 207.00821pt.
 
-<./something/reconstructedImg2.png, id=61, 462.528pt x 346.896pt>
+<./something/reconstructedImg2.png, id=77, 462.528pt x 346.896pt>
 File: ./something/reconstructedImg2.png Graphic file (type png)
 
 <use ./something/reconstructedImg2.png>
@@ -698,47 +697,67 @@ Package pdftex.def Info: ./something/reconstructedImg2.png used on input line 4
 8.
 (pdftex.def)             Requested size: 276.00105pt x 207.01175pt.
  [4 <./phantom/sinogram.jpg> <./phantom/reconstructedImg2.png>] <./brain/sinogr
-am.jpg, id=67, 642.4pt x 481.8pt>
+am.jpg, id=83, 642.4pt x 481.8pt>
 File: ./brain/sinogram.jpg Graphic file (type jpg)
 
 <use ./brain/sinogram.jpg>
 Package pdftex.def Info: ./brain/sinogram.jpg used on input line 55.
 (pdftex.def)             Requested size: 276.00105pt x 207.00821pt.
 
-<./brain/reconstructedImg2.png, id=68, 462.528pt x 346.896pt>
+<./brain/reconstructedImg2.png, id=84, 462.528pt x 346.896pt>
 File: ./brain/reconstructedImg2.png Graphic file (type png)
 
 <use ./brain/reconstructedImg2.png>
 Package pdftex.def Info: ./brain/reconstructedImg2.png used on input line 56.
 (pdftex.def)             Requested size: 276.00105pt x 207.01175pt.
- [5 <./something/sinogram.jpg> <./something/reconstructedImg2.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 64.
- [6 <./brain/sinogram.jpg> <./brain/reconstructedImg2.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 64.
+ [5 <./something/sinogram.jpg> <./something/reconstructedImg2.png>] [6 <./brain
+/sinogram.jpg> <./brain/reconstructedImg2.png>] <./width.png, id=95, 455.45157p
+t x 255.95625pt>
+File: ./width.png Graphic file (type png)
+ <use ./width.png>
+Package pdftex.def Info: ./width.png used on input line 67.
+(pdftex.def)             Requested size: 276.00105pt x 155.10982pt.
+
+<./alpha.jpg, id=96, 455.45157pt x 258.65053pt>
+File: ./alpha.jpg Graphic file (type jpg)
+ <use ./alpha.jpg>
+Package pdftex.def Info: ./alpha.jpg used on input line 76.
+(pdftex.def)             Requested size: 276.00105pt x 156.74255pt.
+ [7 <./width.png (PNG copy)> <./alpha.jpg>]
+<./detector_count.png, id=102, 455.45157pt x 255.95625pt>
+File: ./detector_count.png Graphic file (type png)
+
+<use ./detector_count.png>
+Package pdftex.def Info: ./detector_count.png used on input line 85.
+(pdftex.def)             Requested size: 276.00105pt x 155.10982pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 93.
+ [8 <./detector_count.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 93.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 64.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 64.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 93.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 93.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 72FDDD3F6BD2B8CA223313A050CF40CA;469.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 64.
+(rerunfilecheck)             Checksum: 5BEB63538B1E33C8BBCD125B05BA5DD2;771.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 93.
  ) 
 Here is how much of TeX's memory you used:
- 5906 strings out of 493013
- 83928 string characters out of 6139316
+ 5928 strings out of 493013
+ 84264 string characters out of 6139316
  167374 words of memory out of 5000000
- 9358 multiletter control sequences out of 15000+600000
+ 9374 multiletter control sequences out of 15000+600000
  10313 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,6n,28p,260b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/pl/plrm.enc}</usr/share/texmf-dist/fon
-ts/type1/public/pl/plbx10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plbx
-12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/share/texmf
--dist/fonts/type1/public/pl/plr12.pfb></usr/share/texmf-dist/fonts/type1/public
-/pl/plr8.pfb>
-Output written on report.pdf (6 pages, 524380 bytes).
+ 29i,6n,28p,590b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texmf-dist/fon
+ts/enc/dvips/pl/plrm.enc}</usr/share/texmf-dist/fonts/type1/public/pl/plbx10.pf
+b></usr/share/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/share/texmf-dis
+t/fonts/type1/public/pl/plmi10.pfb></usr/share/texmf-dist/fonts/type1/public/pl
+/plr10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr12.pfb></usr/share/t
+exmf-dist/fonts/type1/public/pl/plr8.pfb>
+Output written on report.pdf (8 pages, 576306 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
- 105 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 139 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
+ 21 named destinations out of 1000 (max. 500000)
+ 152 words of extra memory for PDF output out of 10000 (max. 10000000)
 

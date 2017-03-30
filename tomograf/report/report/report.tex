@@ -29,7 +29,7 @@
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.8\textwidth]{./banana/sinogram.jpg}
-\includegraphics[width=0.8\textwidth]{./banana/reconstructedPicture2.png}
+\includegraphics[width=0.8\textwidth]{./banana/reconstructedImg2.png}
 \end{center}
 \end{figure}
 
@@ -57,7 +57,36 @@
 \end{center}
 \end{figure}
 
+\section{Analiza parametrów}
 
+Zbadaliśmy zależność błędu (średniokwadratowego) mierzonego na podstawie różnicy wartości pikseli obrazu wejściowego (phantom) oraz uzyskanego na wyjściu od: rozwartości kątowej, kroku układu emiter-detektor, liczby detektorów przypadających na jeden emiter. Badaliśmy błąd zarówno dla zastosowanego filtru, jak i bez niego.
+
+\subsection{Rozwartość kątowa}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{./width.png}
+\end{center}
+\end{figure}
+
+Wykres przedstawia zależność błędu od rozwartości kątowej mierzonej w stopniach przy stałych pozostałych parametrach. Im większa jest rozwartość, tym mniejszy błąd. Dla wersji bez filtrowania największą różnicę można zauważyć dla wartości z przedziału 0-10 stopni. Nic nie można powiedzieć dla wersji z filtrowaniem. Najprawdopodobniej zaobserwowane wartości są przekłamane. Przy stosunkowo dużej rozwartości kątowej nie ma znaczącej różnicy w wersji z filtrowaniem i bez. 
+
+\subsection{Krok układu emiter-detektor}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{./alpha.jpg}
+\end{center}
+\end{figure}
+
+Wykres przedstawia zależność błędu od kroku układu emiter-detektor. Oprócz wzrostu błędu wraz ze wzrostem kroku, istotny jest fakt, że przy zmniejszającym się kroku w wersji bez filtrowania nie da się osiągnąć tak dobrej dokładności odwzorowania jak w wersji z filtrowaniem. Zmniejszanie kroku poniżej wartości $0,1$ niosło za sobą duży wzrost wymaganej liczby obliczeń, dlatego nie zostały one wykonane. Można przypuszczać, że dla mniejszych wartości wartość nie osiągnie $0$ ze względu na błędy w obliczeniach zmiennoprzecinkowych. 
+
+\subsection{Liczba detektorów przypadająca na jeden emiter}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{./detector_count.png}
+\end{center}
+\end{figure}
+
+Wykres przedstawia zależność błędu od liczby detektorów przypadających na jeden emiter. Podobnie, jak w przypadku poprzedniej analizy, największy spadek błędu występuje dla małej liczby detektorów na jeden emiter. Wahania wartości błędu w wersji bez filtrowania można tłumaczyć pokrywaniem się linii projekcji z brzegiem obrazu (phantoma), który był bardzo jasny w odróżnieniu od pozostałej części obrazu. Przy dużej liczbie detektorów przypadających na jeden emiter, wersja z filtrowaniem zapewnia lepszą jakość odtworzenia obrazu.
 \section{Bibliografia}
 [1]{http://www.dspguide.com/ch25/5.htm}
 
