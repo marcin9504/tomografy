@@ -94,7 +94,6 @@ def sinogram_to_img2(img, sinogram, lines, filename1, filename2, filter):
     width = img_shape[0]
     height = img_shape[1]
 
-    # dane o projekcjach i detektorach
     sinogram_shape = np.shape(sinogram)
     number_of_projections = sinogram_shape[0]
     number_of_detectors = sinogram_shape[1]
