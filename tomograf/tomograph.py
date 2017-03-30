@@ -20,8 +20,8 @@ from sklearn.metrics import mean_squared_error
 import dicom
 
 global_width = 90
-global_detector_amount = 3
-global_alpha = 60
+global_detector_amount = 360
+global_alpha = 1
 
 
 class Result:
@@ -118,8 +118,7 @@ def tomograf(img_):
 
 def do_tomography():
     img = np.zeros([200, 200])
-    img[24:174, 24:174] = rgb2gray(io.imread("in/image.png"))
+    img[24:174, 24:174] = rgb2gray(io.imread("in/banana.bmp"))
 
     final_image = tomograf(img)
     calculate_error(final_image)
-
