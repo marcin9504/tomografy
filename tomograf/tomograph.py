@@ -17,12 +17,6 @@ import numpy as np
 import datetime
 import time
 from sklearn.metrics import mean_squared_error
-import sys
-import datetime
-import os.path
-import pydicom
-from pydicom.dataset import Dataset, FileDataset
-import pydicom.uid
 
 global_width = 90
 global_detector_amount = 3
