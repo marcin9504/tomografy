@@ -52,12 +52,6 @@ def filter_img(img):
     new = mp.dilation(mp.erosion(new))
     return new
 
-
-def gamma(img, gamma):
-    new = img ** gamma
-    return new
-
-
 def normalise_img(reconstructed, helper):
     normalized = np.copy(reconstructed)
     picture_shape = np.shape(normalized)
@@ -123,7 +117,7 @@ def sinogram_to_img2(img, sinogram, lines, filename1, filename2, filter):
         if (filter):
             fragment[fragment[:, :] < 0] = 0
             fragment = rescale_intensity(fragment)
-        images.append(gamma(fragment, 1))
+        images.append(fragment)
         if (projection != 0 and projection % 10 == 0):
             mse[iterator] = mean_squared_error(img, fragment)
             iterator += 1
@@ -132,7 +126,7 @@ def sinogram_to_img2(img, sinogram, lines, filename1, filename2, filter):
     if (filter):
         fragment[fragment[:, :] < 0] = 0
         fragment = rescale_intensity(fragment)
-    images.append(gamma(fragment, 1))
+    images.append(fragment)
     mse[iterator] = mean_squared_error(img, fragment)
     iterator += 1
 
@@ -140,11 +134,11 @@ def sinogram_to_img2(img, sinogram, lines, filename1, filename2, filter):
 
     if (filter):
         reconstructed = filter_img(fragment)
-        images.append(gamma(reconstructed, 1))
+        images.append(reconstructed)
         mse[iterator] = mean_squared_error(img, reconstructed)
     else:
         reconstructed = fragment
-        images.append(gamma(reconstructed, 1))
+        images.append(reconstructed)
         mse[iterator] = mean_squared_error(img, reconstructed)
     iterator += 1
 

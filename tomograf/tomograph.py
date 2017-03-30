@@ -12,15 +12,12 @@ import iradon
 from matplotlib import pyplot as plt
 from skimage.color import rgb2gray
 from skimage import io
-from dicom.dataset import Dataset, FileDataset
 import numpy as np
-import datetime
-import time
 from sklearn.metrics import mean_squared_error
 
 global_width = 90
-global_detector_amount = 360
-global_alpha = 1
+global_detector_amount = 180
+global_alpha = 2
 
 
 class Result:
@@ -40,25 +37,18 @@ class MyImage:
         self.original = picture_
 
     def img_to_sinogram(self):
-        # Should return array [n][n] which is result of the function  .. from  radon.py
-        # lines n x n x 4 array of lines
         self.sinogram, self.lines = radon.img_to_sinogram(self.original, width=global_width,
                                                           detector_amount=global_detector_amount, alpha=global_alpha)
         fig, plots = plt.subplots(1, 2)
         plots[0].imshow(self.original, cmap='gray')
         plots[1].imshow(self.sinogram, cmap='gray')
         plt.show()
-        # print("Oryginalny obraz:")
-        # print(np.shape(self.original))
-        # print("Stenogram:")
-        # print(np.shape(self.sinogram))
         plt.savefig("sinogram.jpg")
         return self.sinogram
 
     def sinogram_to_img(self):
         self.reconstructed = iradon.sinogram_to_img(self.original, self.sinogram, self.lines)
         fig, plots = plt.subplots(1, 2)
-        # print("Końcowy obraz bez filtracji sinogramu")
         plots[0].imshow(self.original, cmap='gray')
         plots[1].imshow(self.reconstructed, cmap='gray')
         plt.show()
@@ -67,7 +57,6 @@ class MyImage:
     def filter_img(self):
         self.filtered = iradon.sinogram_to_img_f(self.original, self.sinogram, self.lines)
         fig, plots = plt.subplots(1, 2)
-        # print("Końcowy obraz z filtracją sinogramu")
         plots[0].imshow(self.original, cmap='gray')
         plots[1].imshow(self.filtered, cmap='gray')
         plt.show()
