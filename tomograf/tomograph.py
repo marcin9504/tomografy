@@ -137,7 +137,7 @@ def tomograf(img_):
 
 def do_tomography():
     img = np.zeros([200, 200])
-    img[24:174, 24:174] = rgb2gray(io.imread("in/phantom.png"))
+    img[24:174, 24:174] = rgb2gray(io.imread("in/banana.bmp"))
 
     final_image = tomograf(img)
     # calculate_error(final_image)
