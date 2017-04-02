@@ -10,9 +10,6 @@
 \begin{document}
 \input{_tytulowa}
 
-\section{Opis ćwiczenia}
-
-
 \section{Algorytm}
 \begin{description}
 \item[1)] Wczytujemy obraz, konwertujemy do skali szarości.
@@ -24,39 +21,41 @@
 \end{description}
  
 \section{Wynik działania programu}
-Poniżej znajdują się sinogramy dla obrazów wejściowych uzyskane za pomocą transformacji Radona oraz obrazy odtworzone z sinogramu za pomocą odwrotnej transformacji Radona.
-\subsection{Przekształcenia}
-\begin{figure}[H]
+Poniżej znajdują się sinogramy dla obrazów wejściowych uzyskane za pomocą transformacji Radona oraz obrazy odtworzone z sinogramu za pomocą odwrotnej transformacji Radona. Obrazy są przedstawione w kolejności: sinogram, uzyskany obraz bez filtracji i z filtracją. Po lewej zawsze widoczny jest obraz wejściowy.
+
+\begin{figure}
 \begin{center}
 \includegraphics[width=0.8\textwidth]{./banana/sinogram.jpg}
+\includegraphics[width=0.8\textwidth]{./banana/reconstructedImg.png}
 \includegraphics[width=0.8\textwidth]{./banana/reconstructedImg2.png}
 \end{center}
 \end{figure}
 
-\subsection{Przekształcenia}
-\begin{figure}[H]
+\begin{figure}
 \begin{center}
 \includegraphics[width=0.8\textwidth]{./phantom/sinogram.jpg}
+\includegraphics[width=0.8\textwidth]{./phantom/reconstructedImg.png}
 \includegraphics[width=0.8\textwidth]{./phantom/reconstructedImg2.png}
 \end{center}
 \end{figure}
 
-\subsection{Przekształcenia}
-\begin{figure}[H]
+\begin{figure}
 \begin{center}
 \includegraphics[width=0.8\textwidth]{./something/sinogram.jpg}
+\includegraphics[width=0.8\textwidth]{./something/reconstructedImg.png}
 \includegraphics[width=0.8\textwidth]{./something/reconstructedImg2.png}
 \end{center}
 \end{figure}
 
-\subsection{Przekształcenia}
-\begin{figure}[H]
+\begin{figure}
 \begin{center}
 \includegraphics[width=0.8\textwidth]{./brain/sinogram.jpg}
+\includegraphics[width=0.8\textwidth]{./brain/reconstructedImg.png}
 \includegraphics[width=0.8\textwidth]{./brain/reconstructedImg2.png}
 \end{center}
 \end{figure}
 
+\newpage
 \section{Analiza parametrów}
 
 Zbadaliśmy zależność błędu (średniokwadratowego) mierzonego na podstawie różnicy wartości pikseli obrazu wejściowego (phantom) oraz uzyskanego na wyjściu od: rozpiętości kątowej, kroku układu emiter-detektor, liczby detektorów przypadających na jeden emiter. Badaliśmy błąd zarówno dla zastosowanego filtru, jak i bez niego.
